@@ -23,13 +23,15 @@ sudo apt-get update
 sudo apt-get install git sense-hat python3-paramiko
 git clone https://github.com/LOOKSFilm/temperiePi.git
 cd temperiePi
-chmod +x temperiePi.sh
+chmod +x temperiePi/temperiePi.sh
 ```
+#### Add script to Autostart
 mit ```crontab -e``` (slect Nano Editor)
 ```@reboot /home/postpro/temperiePi/temperiePi.sh```
 am ende der Datei hinzufügen
 
 ## 3. Configure Lan
+#### (notwendig 10.0.77.xx hat kein dhcp)
 ``` sh 
     sudo nmcli con add type ethernet ifname eth0 con-name eth0
     sudo nmcli con modify eth0 ipv4.addresses 10.0.77.112/24
