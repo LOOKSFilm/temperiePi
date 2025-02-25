@@ -22,7 +22,6 @@
 sudo apt-get update
 sudo apt-get install git sense-hat python3-paramiko
 git clone https://github.com/LOOKSFilm/temperiePi.git
-cd temperiePi
 chmod +x temperiePi/temperiePi.sh
 ```
 #### Add script to Autostart
