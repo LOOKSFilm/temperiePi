@@ -18,10 +18,31 @@
     - ```ssh postpro@killswitch```
 
 ## 2. Install Python Script
-Install sense-hat:
 ```
 sudo apt-get update
-sudo apt-get install sense-hat python3-paramiko
-
-sudo reboot
+sudo apt-get install git sense-hat python3-paramiko
+git clone https://github.com/LOOKSFilm/temperiePi.git
+cd temperiePi
+chmod +x temperiePi.sh
 ```
+mit ```crontab -e``` (slect Nano Editor)
+```@reboot /home/postpro/temperiePi/temperiePi.sh```
+am ende der Datei hinzufügen
+
+## 3. Configure Lan
+``` sh 
+    sudo nmcli con add type ethernet ifname eth0 con-name eth0
+    sudo nmcli con modify eth0 ipv4.addresses 10.0.77.112/24
+    sudo nmcli con modify eth0 ipv4.gateway 10.0.77.13
+    sudo nmcli con modify eth0 ipv4.dns 10.0.77.13
+    sudo nmcli con modify eth0 ipv4.method manual
+    sudo nmcli con down eth0
+    sudo nmcli con up eth0
+```
+
+Jetzt nur noch neustarten ```sudo reboot``` und der temperiePi ist eingerichtet!
+
+
+#### Logfile
+Das Script loggt die Temperatur in einem logfile
+```cat /home/postpro/temperiePi/temperature_log.json```
