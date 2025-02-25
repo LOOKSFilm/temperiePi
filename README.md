@@ -25,9 +25,13 @@ git clone https://github.com/LOOKSFilm/temperiePi.git
 chmod +x temperiePi/temperiePi.sh
 ```
 #### Add script to Autostart
-mit ```crontab -e``` (slect Nano Editor)
-```@reboot /home/postpro/temperiePi/temperiePi.sh```
-am ende der Datei hinzufügen
+```crontab -e``` select 1 (nano editor)
+```
+@reboot /home/postpro/temperiePi/temperiePi.sh
+```
+am ende der Datei hinzufügen 
+save: strg+s
+exit: strg+x
 
 ## 3. Configure Lan
 #### (notwendig 10.0.77.xx hat kein dhcp)
